@@ -10,7 +10,13 @@ get '/secret' do
   "This is the secret route"
 end
 
-get '/cat' do
+get '/random-cat' do
   @cat_name = %w[Amigo Oscar Viking].sample
 erb(:index)
 end
+
+get '/named-cat' do
+  @cat_name = params[:name]
+erb(:index)
+end
+
